@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <title>Prime</title>
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen">
+  </head>
+  <body>
+    <div class="container">
+      <div class="banner">
+        <h1>Prime</h1>
+        <p>Let's find some primers, shall we?</p>
+      </div>
+
+      <p>We found <%= @matches.size %> matching primers.</p>
+
+      <% if @matches.any? %>
+        <p>Here they are, in no particular order:</p>
+        <% @matches.each do |primer| %>
+          <h4><%= primer.name %></h4>
+          <code><%= primer.sequence %></code>
+        <% end %>
+      <% else %>
+        <p>Bummer.</p>
+      <% end %>
+    </div>
+  </body>
+</html>
