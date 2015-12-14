@@ -33,6 +33,7 @@ class Primer
     Primer.new(
       name: name + "--reverse complement",
       sequence: sequence_reverse_complement,
+      note: note,
     )
   end
 
