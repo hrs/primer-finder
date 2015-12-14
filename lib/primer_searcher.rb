@@ -5,8 +5,8 @@ class PrimerSearcher
 
   def initialize(primers:, target:, target_container:)
     @primers = primers
-    @target = normalize(target)
-    @target_container = normalize(target_container)
+    @target = SequenceNormalizer.new(target).normalize
+    @target_container = SequenceNormalizer.new(target_container).normalize
   end
 
   def target_position
@@ -39,9 +39,5 @@ class PrimerSearcher
 
   def potential_matches
     primers + primers.map(&:reverse_complement)
-  end
-
-  def normalize(sequence)
-    sequence.downcase.gsub(/\s+/, "")
   end
 end

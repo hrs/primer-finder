@@ -4,8 +4,7 @@ class Primer
   def initialize(name:, sequence:, note: "")
     @name = name
     @note = note
-    # TODO: extract sequence normalizer
-    @sequence = sequence.downcase
+    @sequence = SequenceNormalizer.new(sequence).normalize
   end
 
   def overlap(position:, container:)
