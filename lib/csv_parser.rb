@@ -6,7 +6,7 @@ class CsvParser
   def primers
     CSV.foreach(tempfile, headers: true).
       select { |row| parsable_row?(row) }.
-      map { |row| Primer.new(sequence: row[1], name: row[2]) }
+      map { |row| Primer.new(name: row[0], sequence: row[1], note: row[2]) }
   end
 
   private

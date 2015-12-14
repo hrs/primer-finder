@@ -1,8 +1,9 @@
 class Primer
-  attr_reader :name, :sequence
+  attr_reader :name, :sequence, :note
 
-  def initialize(name:, sequence:)
+  def initialize(name:, sequence:, note: "")
     @name = name
+    @note = note
     # TODO: extract sequence normalizer
     @sequence = sequence.downcase
   end
