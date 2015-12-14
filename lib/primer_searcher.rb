@@ -23,12 +23,14 @@ class PrimerSearcher
 
   def results
     potential_matches.map { |primer|
+      overlap = primer.overlap(
+        position: target_position,
+        container: target_container
+      )
       SearchResult.new(
         primer: primer,
-        binding_length: primer.overlap(
-          position: target_position,
-          container: target_container
-        )
+        binding_length: overlap,
+        primer_end: primer.binding_end(target, overlap),
       )
     }.select(&:successful?)
   end

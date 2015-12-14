@@ -28,4 +28,20 @@ describe Primer do
       expect(primer.overlap(container: container, position: position)).to eq(0)
     end
   end
+
+  describe "#binding_end" do
+    it "returns :head if the target overlaps with the front of the primer" do
+      target = "cac"
+      primer = Primer.new(name: "", sequence: "acgg")
+
+      expect(primer.binding_end(target, 2)).to eq(:head)
+    end
+
+    it "returns :tail if the target overlaps with the back of the primer" do
+      target = "cac"
+      primer = Primer.new(name: "", sequence: "ggca")
+
+      expect(primer.binding_end(target, 2)).to eq(:tail)
+    end
+  end
 end

@@ -32,6 +32,10 @@ a {
   font-weight: bold;
 }
 
+.match-result .binding-site {
+  color: red;
+}
+
 footer {
   width: 700px;
   position: fixed;

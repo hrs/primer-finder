@@ -1,9 +1,10 @@
 class SearchResult
-  attr_reader :primer, :binding_length
+  attr_reader :primer, :binding_length, :primer_end
 
-  def initialize(primer:, binding_length:)
+  def initialize(primer:, binding_length:, primer_end:)
     @primer = primer
     @binding_length = binding_length
+    @primer_end = primer_end
   end
 
   def successful?

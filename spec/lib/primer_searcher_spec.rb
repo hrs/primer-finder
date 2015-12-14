@@ -50,6 +50,7 @@ describe PrimerSearcher do
       expected_match = SearchResult.new(
         primer: binding_primer,
         binding_length: 2,
+        primer_end: :tail,
       )
 
       expect(primer_searcher.results).to eq([expected_match])

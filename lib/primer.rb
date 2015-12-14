@@ -36,6 +36,14 @@ class Primer
     )
   end
 
+  def binding_end(target, overlap)
+    if target.end_with?(sequence[0...overlap])
+      :head
+    else
+      :tail
+    end
+  end
+
   private
 
   def size
