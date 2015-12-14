@@ -1,38 +1,44 @@
 body {
-    font-family: Helvetica, sans;
+  font-family: Helvetica, sans;
 }
 
 a {
-    color: red;
+  color: red;
 }
 
 #banner {
-    text-align: center;
-    margin-bottom: 40px;
+  text-align: center;
+  margin-bottom: 40px;
 }
 
 #container {
-    width: 700px;
-    margin: 0 auto;
-    overflow: auto;
+  width: 700px;
+  margin: 0 auto;
+  overflow: auto;
 }
 
-#url_container {
-    background-color: #eee;
-    border-radius: 5px;
-    padding: 10px;
-    font-family: Consolas, Menlo, Courier, monospace;
-    word-wrap: break-word;
-    margin-bottom: 100px;
+.match-result {
+  background-color: #eee;
+  border-radius: 5px;
+  margin-bottom: 100px;
+  padding-left: 20px;
+}
+
+.match-result code {
+  font-family: Consolas, Menlo, Courier, monospace;
+}
+
+.match-result .primer-name {
+  font-weight: bold;
 }
 
 footer {
-    width: 700px;
-    position: fixed;
-    bottom: 0;
-    font-size: 0.8em;
-    text-align: center;
-    background-color: #eee;
-    border-radius: 5px;
-    color: #bbb;
+  width: 700px;
+  position: fixed;
+  bottom: 0;
+  font-size: 0.8em;
+  text-align: center;
+  background-color: #eee;
+  border-radius: 5px;
+  color: #bbb;
 }

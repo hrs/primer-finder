@@ -1,26 +1,34 @@
 <html>
   <head>
-    <title>Prime</title>
+    <title>Primer Finder</title>
     <link rel="stylesheet" type="text/css" href="style.css" media="screen">
   </head>
   <body>
     <div class="container">
       <div class="banner">
-        <h1>Prime</h1>
-        <p>Let's find some primers, shall we?</p>
+        <h1>Prime Finder</h1>
       </div>
 
-      <p>We found <%= @matches.size %> matching primers.</p>
-
-      <% if @matches.any? %>
-        <p>Here they are, in no particular order:</p>
-        <% @matches.each do |primer| %>
-          <h4><%= primer.name %></h4>
-          <code><%= primer.sequence %></code>
+      <p>
+        <% if @sorted_matches.any? %>
+            We found <%= @sorted_matches.size %> matching
+            <% if @sorted_matches.size == 1 %>
+              primer:
+            <% else %>
+              primers. Results are ordered by size of the binding site:
+            <% end %>
+        <% else %>
+          Couldn't match any of these primers. Sorry.
         <% end %>
-      <% else %>
-        <p>Bummer.</p>
-      <% end %>
+      </p>
+
+        <% @sorted_matches.each do |match| %>
+          <div class="match-result">
+            <p class="primer-name"><%= match.primer.name %></p>
+            <p>Size of binding site: <%= match.binding_length %></p>
+            <code><%= match.primer.sequence %></code>
+          </div>
+        <% end %>
     </div>
   </body>
 </html>
