@@ -15,7 +15,7 @@ class CsvParser
 
   def parsable_row?(row)
     row[0] =~ /\w+/ &&
-      row[1] =~ /\w+/ &&
+      row[1] =~ /^[AaCcGgTt\s]+$/ &&
       row[2] =~ /\w+/
   end
 end
