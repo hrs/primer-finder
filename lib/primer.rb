@@ -31,7 +31,7 @@ class Primer
 
   def reverse_complement
     Primer.new(
-      name: name + "--reverse",
+      name: name + "--reverse compliment",
       sequence: sequence_reverse_compliment,
     )
   end
