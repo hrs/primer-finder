@@ -20,16 +20,12 @@ a {
 .match-result {
   background-color: #eee;
   border-radius: 5px;
-  margin-bottom: 100px;
-  padding-left: 20px;
+  margin-bottom: 20px;
+  padding: 20px;
 }
 
 .match-result code {
   font-family: Consolas, Menlo, Courier, monospace;
-}
-
-.match-result .primer-name {
-  font-weight: bold;
 }
 
 .match-result .binding-site {

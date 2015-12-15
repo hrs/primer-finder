@@ -13,7 +13,7 @@
 
 <% @sorted_matches.each do |match| %>
   <div class="match-result">
-    <p class="primer-name"><%= match.primer.name %></p>
+    <h2><%= match.primer.name %></h2>
     <p>Note: <%= match.primer.note %></p>
     <p>Size of binding site: <%= match.binding_length %></p>
 
