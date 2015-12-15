@@ -44,6 +44,13 @@ class Primer
     end
   end
 
+  def ==(other)
+    self.class == other.class &&
+      name == other.name &&
+      sequence == other.sequence &&
+      note == other.note
+  end
+
   private
 
   def size
