@@ -17,6 +17,10 @@ a {
   overflow: auto;
 }
 
+.form-input {
+  margin-bottom: 30px;
+}
+
 .match-result {
   background-color: #eee;
   border-radius: 5px;
