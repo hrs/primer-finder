@@ -19,11 +19,14 @@ class PrimeServer < Sinatra::Base
   end
 
   post "/results" do
-    @sorted_matches = PrimerSearcher.new(
+    searcher = PrimerSearcher.new(
       primers: CsvParser.new(params[:primer_csv][:tempfile]).primers,
       target: params[:target],
       target_container: params[:target_container]
-    ).results.sort_by(&:binding_length).reverse
+    )
+
+    @sorted_matches = searcher.results.sort_by(&:binding_length).reverse
+    @target = searcher.target
 
     erb :results
   end
