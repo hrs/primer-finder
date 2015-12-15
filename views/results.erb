@@ -1,11 +1,11 @@
 <p>
   <% if @sorted_matches.any? %>
-      We found <%= @sorted_matches.size %> matching
-      <% if @sorted_matches.size == 1 %>
-        primer:
-      <% else %>
-        primers. Results are ordered by size of the binding site:
-      <% end %>
+    We found <%= @sorted_matches.size %> matching
+    <% if @sorted_matches.size == 1 %>
+      primer:
+    <% else %>
+      primers. Results are ordered by size of the binding site:
+    <% end %>
   <% else %>
     Couldn't match any of these primers. Sorry.
   <% end %>
