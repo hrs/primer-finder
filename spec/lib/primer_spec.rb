@@ -43,5 +43,12 @@ describe Primer do
 
       expect(primer.binding_end(target, 2)).to eq(:tail)
     end
+
+    it "returns :contained if the primer's entirely within the target" do
+      target = "cacttttg"
+      primer = Primer.new(name: "", sequence: "acttt")
+
+      expect(primer.binding_end(target, 5)).to eq(:contained)
+    end
   end
 end

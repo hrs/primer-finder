@@ -39,8 +39,10 @@ class Primer
   def binding_end(target, overlap)
     if target.end_with?(sequence[0...overlap])
       :head
-    else
+    elsif target.start_with?(sequence[-overlap..-1])
       :tail
+    else
+      :contained
     end
   end
 
