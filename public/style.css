@@ -21,6 +21,17 @@ a {
   margin-bottom: 30px;
 }
 
+.csv {
+  border-collapse: collapse;
+  table-border: 1;
+}
+
+.csv, .csv th, .csv td {
+  border: 1px solid black;
+  text-align: left;
+  padding: 10px;
+}
+
 .match-result {
   background-color: #eee;
   border-radius: 5px;
