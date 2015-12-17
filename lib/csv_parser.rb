@@ -4,7 +4,7 @@ class CsvParser
   end
 
   def primers
-    CSV.foreach(tempfile, headers: true).
+    CSV.foreach(tempfile, headers: true, encoding: "ISO8859-1").
       select { |row| parsable_row?(row) }.
       map { |row| primer_from_row(row) }
   end
