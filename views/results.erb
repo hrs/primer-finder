@@ -1,15 +1,18 @@
-<p>
-  <% if @sorted_matches.any? %>
+<% if @sorted_matches.any? %>
+  <p>
     We found <%= @sorted_matches.size %> matching
     <% if @sorted_matches.size == 1 %>
       primer:
     <% else %>
-      primers. Results are ordered by size of the binding site:
+      primers. Results are ordered by size of the binding site.
     <% end %>
-  <% else %>
+  </p>
+  <p>Key: <code><span class="target">unbound-target-region</span> <span class="binding-site">binding-site</span> unbound-primer</code></p>
+<% else %>
+  <p>
     Couldn't match any of these primers. Sorry.
-  <% end %>
-</p>
+  </p>
+<% end %>
 
 <% @sorted_matches.each do |match| %>
   <div class="match-result">
@@ -19,10 +22,10 @@
 
     <code>
       <% if match.primer_end == :head %>
-        <%= @target[0...-match.binding_length] %><span class="binding-site"><%= @target[-match.binding_length..-1] %></span><br>
+        <span class="target"><%= @target[0...-match.binding_length] %></span><span class="binding-site"><%= @target[-match.binding_length..-1] %></span><br>
         <%= "&nbsp;" * (@target.size - match.binding_length) %><span class="binding-site"><%= match.primer.sequence[0...match.binding_length] %></span><%= match.primer.sequence[match.binding_length..-1] %>
       <% else %>
-        <%= "&nbsp;" * (match.primer.sequence.size - match.binding_length) %><span class="binding-site"><%= @target[0...match.binding_length] %></span><%= @target[match.binding_length..-1] %><br>
+        <%= "&nbsp;" * (match.primer.sequence.size - match.binding_length) %><span class="binding-site"><%= @target[0...match.binding_length] %></span><span class="target"><%= @target[match.binding_length..-1] %></span><br>
         <%= match.primer.sequence[0...-match.binding_length] %><span class="binding-site"><%= match.primer.sequence[-match.binding_length..-1] %></span>
       <% end %>
     </code>

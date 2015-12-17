@@ -32,8 +32,12 @@ a {
   font-family: Consolas, Menlo, Courier, monospace;
 }
 
-.match-result .binding-site {
+.binding-site {
   color: red;
+}
+
+.target {
+  color: blue;
 }
 
 footer {
