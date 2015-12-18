@@ -29,6 +29,24 @@ describe Primer do
     end
   end
 
+  describe "#reverse_complement" do
+    it "returns the reverse complement of the primer" do
+      primer = Primer.new(
+        name: "primer",
+        sequence: "aaagt",
+        note: "Just some primer."
+      )
+
+      reverse_complement = Primer.new(
+        name: "primer--reverse complement",
+        sequence: "acttt",
+        note: "Just some primer."
+      )
+
+      expect(primer.reverse_complement).to eq(reverse_complement)
+    end
+  end
+
   describe "#binding_end" do
     it "returns :head if the target overlaps with the front of the primer" do
       target = "cac"
