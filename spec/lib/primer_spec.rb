@@ -20,6 +20,14 @@ describe Primer do
       expect(primer.overlap(container: container, position: position)).to eq(2)
     end
 
+    it "handles edge cases" do
+      container = "ttaaaacccc"
+      position = Position.new(start_pos: 0, end_pos: 6)
+      primer = Primer.new(name: "", sequence: "aaaacccc")
+
+      expect(primer.overlap(container: container, position: position)).to eq(4)
+    end
+
     it "returns 0 if the primer won't bind" do
       container = "aaaaaaaacccgggggggg"
       position = Position.new(start_pos: 8, end_pos: 11)

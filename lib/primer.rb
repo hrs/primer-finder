@@ -14,10 +14,12 @@ class Primer
         start_pos: start_pos,
         end_pos: start_pos + size
       )
+
       target_within_bindable_region = Position.new(
-        start_pos: size - 1,
-        end_pos: size - 1 + position.size
+        start_pos: size - 1 + initial_offset(position),
+        end_pos: size - 1 + position.size + initial_offset(position)
       )
+
       binding_site.overlap_with(target_within_bindable_region)
     else
       0
@@ -25,7 +27,12 @@ class Primer
   end
 
   def bindable_region(contained_in, position)
-    contained_in[position.start_pos - size + 1...position.end_pos + size - 1]
+    first_possible_position = [position.start_pos - size + 1, 0].max
+    contained_in[first_possible_position...position.end_pos + size - 1]
+  end
+
+  def initial_offset(position)
+    [position.start_pos - size + 1, 0].min
   end
 
   def reverse_complement
