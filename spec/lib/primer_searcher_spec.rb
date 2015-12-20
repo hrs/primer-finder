@@ -22,7 +22,8 @@ describe PrimerSearcher do
         target_container: "ggaaaccct"
       )
 
-      expect(primer_searcher.target_position).to eq(Position.new(start_pos: 2, end_pos: 8))
+      expect(primer_searcher.target_position).
+        to eq(Position.new(start_pos: 2, end_pos: 8))
     end
 
     it "returns nil if the target can't be found" do

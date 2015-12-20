@@ -1,11 +1,12 @@
 require "bundler/setup"
 require "rspec/core"
-require "rack/test"
+require "capybara/rspec"
 
 require "prime"
 require "prime_server"
 
 set :environment, :test
+Capybara.app = PrimeServer
 
 RSpec.configure do |config|
   config.mock_with :rspec

@@ -12,11 +12,11 @@ group :development, :test do
   gem "pry"
   gem "rake"
   gem "rspec"
-  gem "rack-test"
   gem "simplecov"
   gem "shotgun"
 end
 
 group :test do
+  gem "capybara"
   gem "launchy"
 end
