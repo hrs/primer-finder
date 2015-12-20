@@ -1,0 +1,62 @@
+<%= form_tag("/search_results", enctype: "multipart/form-data") do %>
+  <div>
+    <label for="target">Target region:</label>
+  </div>
+  <div class="form-input">
+    <textarea name="target" cols="60" rows="6" required="true">AAAAA</textarea>
+  </div>
+
+  <div>
+    <label for="target_container">Larger region containing the target:</label>
+  </div>
+  <div class="form-input">
+    <textarea name="target_container" cols="60" rows="6" required="true">CCCCCCAAAAAGGGGGGGGTTT</textarea>
+  </div>
+
+  <div>
+    <label for="primer_csv">A CSV file of primers, where each line contains a name followed by a sequence:</label>
+  </div>
+  <div class="form-input">
+    <input type="file" name="primer_csv">
+  </div>
+
+  <div>
+    <input type="submit" id="submit" value="Find primers!">
+  </div>
+<% end %>
+
+<hr>
+
+<h2>How should I format my CSV?</h2>
+
+<ul>
+  <li>The CSV should have two (or three) columns. The first should be the <strong>name</strong> of the primer, and the second should be its <strong>sequence</strong>. The third is an optional <strong>notes</strong> column.</li>
+  <li>The CSV should have a header (it'll be stripped off, so if you don't include a header your first row won't be checked). The actual content of the header doesn't matter.</li>
+  <li>Sequences can include whitespace, and it doesn't matter if they're in mixed case (some capital, some lowercase). If there are any characters other than whitespace or A/C/T/G, though, the sequence will be considered invalid and the row will be skipped.</li>
+  <li>Empty rows in the CSV will be skipped.</li>
+</ul>
+
+<p>Here's an example of a well-formatted CSV file:</p>
+
+<table class="csv">
+  <tr>
+    <th>Name</th>
+    <th>Sequence</th>
+    <th>Notes</th>
+  </tr>
+  <tr>
+    <td>ABC123</td>
+    <td>AAAAG cccggtgtgaacat</td>
+    <td>This isn't a real sequence.</td>
+  </tr>
+  <tr>
+    <td>DEF456</td>
+    <td>actgtGATtgtac</td>
+    <td>Neither is this.</td>
+  </tr>
+  <tr>
+    <td>GHI789</td>
+    <td>gattaca</td>
+    <td>Pretty solid film.</td>
+  </tr>
+</table>

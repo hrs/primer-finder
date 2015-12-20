@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="ROBOTS" content="NOODP" />
+    <meta name="viewport" content="initial-scale=1" />
+    <title><%= title %></title>
+    <%= stylesheet_link_tag :application, media: "all" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body class="<%= body_class %>">
+    <div id="container">
+      <div class="banner">
+        <h1><a href="/">Primer Finder</a></h1>
+      </div>
+
+      <%= render "flashes" -%>
+
+      <%= yield %>
+
+      <footer>
+        <p>
+          PrimerFinder is free software, licensed under the <a href="https://gnu.org/licenses/gpl.html">GPLv3</a>.
+          Code is <a href="https://github.com/hrs/primer-finder">available on GitHub</a>.
+        </p>
+      </footer>
+    </end>
+
+    <%= render "javascript" %>
+  </body>
+</html>

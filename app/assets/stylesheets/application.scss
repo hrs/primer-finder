@@ -1,0 +1,56 @@
+@charset "utf-8";
+
+@import "normalize-rails";
+@import "bourbon";
+@import "base/grid-settings";
+@import "neat";
+@import "base/base";
+@import "refills/flashes";
+
+$binding-site: #f00;
+$container-background: #eee;
+$footer-color: #bbb;
+$target-region: #00f;
+
+$radius: 5px;
+
+#Container {
+  width: 700px;
+  margin: 0 auto;
+  overflow: auto;
+}
+
+.banner h1 {
+  font-size: 2em;
+}
+
+footer {
+  background-color: $container-background;
+  border-top-left-radius: $radius;
+  border-top-right-radius: $radius;
+  bottom: 0;
+  color: $footer-color;
+  font-size: 0.8em;
+  margin-top: 200px;
+  padding: 10px;
+  text-align: center;
+}
+
+.match-result {
+  background-color: $container-background;
+  border-radius: $radius;
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+.match-result code {
+  font-family: Consolas, Menlo, Courier, monospace;
+}
+
+.binding-site {
+  color: $binding-site;
+}
+
+.target {
+  color: $target-region;
+}

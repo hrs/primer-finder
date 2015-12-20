@@ -7,10 +7,10 @@ An instance is freely available for use at http://primer-finder.herokuapp.com.
 
 ### Setting up a development environment
 
-PrimerFinder is written in Ruby using the [Sinatra] framework.
+PrimerFinder is written in Ruby using the [Rails] framework.
 
 First, make sure you've got the version of Ruby specified in the [Gemfile]. As
-of this writing, that's 2.2.3. You'll almost certainly want to use a Ruby
+of this writing, that's 2.2.4. You'll almost certainly want to use a Ruby
 version manager to install and manage different versions of the language. I'm
 partial to using [chruby] with [ruby-install], but [RVM] and [rbenv] are also
 popular.
@@ -25,20 +25,20 @@ $ gem install bundler
 $ bundle
 ```
 
-You should now be able to start the server locally by running `foreman start`.
+After setting up, you can run the application using [Heroku Local]:
 
-In development (and only in development!) I'd suggest running the server with
-`shotgun` instead of `foreman start`, since it'll reload all the code on every
-new request, so you won't have to keep restarting the server to see your
-changes.
+```sh
+$ heroku local
+```
 
-[Sinatra]: http://www.sinatrarb.com/
+[Rails]: http://rubyonrails.org/
 [Gemfile]: https://github.com/hrs/primer-finder/blob/master/Gemfile
 [chruby]: https://github.com/postmodern/chruby
 [ruby-install]: https://github.com/postmodern/ruby-install
 [RVM]: https://rvm.io/
 [rbenv]: https://github.com/rbenv/rbenv
 [bundler]: http://bundler.io/
+[Heroku Local]: https://devcenter.heroku.com/articles/heroku-local
 
 ### Running tests
 
@@ -67,3 +67,12 @@ Everything *should* just work.
 PrimerFinder's licensed under the [GNU General Public License].
 
 [GNU General Public License]: https://github.com/hrs/primer-finder/blob/master/LICENSE.md
+
+### Guidelines
+
+Use the following guides for getting things done, programming well, and
+programming in style.
+
+* [Protocol](http://github.com/thoughtbot/guides/blob/master/protocol)
+* [Best Practices](http://github.com/thoughtbot/guides/blob/master/best-practices)
+* [Style](http://github.com/thoughtbot/guides/blob/master/style)

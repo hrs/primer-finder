@@ -1,4 +1,4 @@
-require "spec_helper"
+require "rails_helper"
 
 feature "Users can search for primers" do
   context "CSV contains a matching primer" do

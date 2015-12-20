@@ -1,4 +1,4 @@
-require "./lib/prime"
-require "./lib/prime_server"
+# This file is used by Rack-based servers to start the application.
 
-run PrimeServer
+require ::File.expand_path('../config/environment', __FILE__)
+run Rails.application
