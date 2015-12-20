@@ -52,12 +52,10 @@ a {
 }
 
 footer {
-  width: 700px;
-  position: fixed;
+  margin-top: 200px;
+  padding: 5px;
   bottom: 0;
   font-size: 0.8em;
-  text-align: center;
   background-color: #eee;
-  border-radius: 5px;
   color: #bbb;
 }
