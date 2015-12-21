@@ -10,7 +10,7 @@ An instance is freely available for use at http://primer-finder.herokuapp.com.
 PrimerFinder is written in Ruby using the [Sinatra] framework.
 
 First, make sure you've got the version of Ruby specified in the [Gemfile]. As
-of this writing, that's 2.2.3. You'll almost certainly want to use a Ruby
+of this writing, that's 2.2.4. You'll almost certainly want to use a Ruby
 version manager to install and manage different versions of the language. I'm
 partial to using [chruby] with [ruby-install], but [RVM] and [rbenv] are also
 popular.
