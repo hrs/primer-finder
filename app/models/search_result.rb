@@ -16,4 +16,8 @@ class SearchResult
       primer == other.primer &&
       binding_length == other.binding_length
   end
+
+  def to_partial_path
+    "search_results/search_result"
+  end
 end

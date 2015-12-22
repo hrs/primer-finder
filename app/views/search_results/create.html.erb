@@ -14,24 +14,4 @@
   </p>
 <% end %>
 
-<% @sorted_matches.each do |match| %>
-  <div class="match-result">
-    <h2><%= match.primer.name %></h2>
-    <p>Note: <%= match.primer.note %></p>
-    <p>Size of binding site: <%= match.binding_length %></p>
-
-    <code>
-      <% if match.primer_end == :head %>
-        <span class="target"><%= @target[0...-match.binding_length] %></span><span class="binding-site"><%= @target[-match.binding_length..-1] %></span><br>
-        <%= ("&nbsp;" * (@target.size - match.binding_length)).html_safe %><span class="binding-site"><%= match.primer.sequence[0...match.binding_length] %></span><%= match.primer.sequence[match.binding_length..-1] %>
-      <% elsif match.primer_end == :tail %>
-        <%= ("&nbsp;" * (match.primer.sequence.size - match.binding_length)).html_safe %><span class="binding-site"><%= @target[0...match.binding_length] %></span><span class="target"><%= @target[match.binding_length..-1] %></span><br>
-        <%= match.primer.sequence[0...-match.binding_length] %><span class="binding-site"><%= match.primer.sequence[-match.binding_length..-1] %></span>
-      <% else %>
-        <% offset = @target.index(match.primer.sequence) %>
-        <span class="target"><%= @target[0...offset] %></span><span class="binding-site"><%= @target[offset...offset + match.primer.sequence.size] %></span><span class="target"><%= @target[offset + match.primer.sequence.size..-1] %></span><br>
-       <%= ("&nbsp;" * offset).html_safe %><span class="binding-site"><%= match.primer.sequence %></span>
-      <% end %>
-    </code>
-  </div>
-<% end %>
+<%= render @sorted_matches %>
