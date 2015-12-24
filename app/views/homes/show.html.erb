@@ -1,29 +1,4 @@
-<%= form_tag("/search_results", enctype: "multipart/form-data") do %>
-  <div>
-    <label for="target">Target region:</label>
-  </div>
-  <div class="form-input">
-    <textarea name="target" cols="60" rows="6" required="true">AAAAA</textarea>
-  </div>
-
-  <div>
-    <label for="target_container">Larger region containing the target:</label>
-  </div>
-  <div class="form-input">
-    <textarea name="target_container" cols="60" rows="6" required="true">CCCCCCAAAAAGGGGGGGGTTT</textarea>
-  </div>
-
-  <div>
-    <label for="primer_csv">A CSV file of primers, where each line contains a name followed by a sequence:</label>
-  </div>
-  <div class="form-input">
-    <input type="file" name="primer_csv">
-  </div>
-
-  <div>
-    <input type="submit" id="submit" value="Find primers!">
-  </div>
-<% end %>
+<%= render "search_form" %>
 
 <hr>
 
