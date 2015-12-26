@@ -10,14 +10,24 @@
 $binding-site: #f00;
 $container-background: #eee;
 $footer-color: #bbb;
-$target-region: #00f;
-
+$footer-height: 50px;
 $radius: 5px;
+$target-region: #00f;
+$width: 700px;
 
-#container {
-  width: 700px;
+html {
+  min-height: 100%;
+  position: relative;
+}
+
+body {
+  margin-bottom: $footer-height;
+}
+
+.container {
   margin: 0 auto;
   overflow: auto;
+  width: $width;
 }
 
 .banner h1 {
@@ -31,9 +41,11 @@ footer {
   bottom: 0;
   color: $footer-color;
   font-size: 0.8em;
-  margin-top: 200px;
+  height: $footer-height;
   padding: 10px;
+  position: absolute;
   text-align: center;
+  width: $width;
 }
 
 .match-result {
