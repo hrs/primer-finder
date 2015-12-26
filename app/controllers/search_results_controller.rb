@@ -8,5 +8,8 @@ class SearchResultsController < ApplicationController
 
     @sorted_matches = searcher.results.sort_by(&:binding_length).reverse
     @target = searcher.target
+  rescue PrimerSearchError => e
+    flash.alert = e.message
+    redirect_to root_path
   end
 end

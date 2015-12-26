@@ -45,4 +45,26 @@ feature "Users can search for primers" do
       expect(page).to have_content("Couldn't match any of these primers.")
     end
   end
+
+  context "Container doesn't contain the target region" do
+    scenario "the results page displays an error" do
+      visit "/"
+
+      fill_in(
+        "target",
+        with: "aaaaa"
+      )
+      fill_in(
+        "target_container",
+        with: "gggggggggggg"
+      )
+      attach_file(
+        "primer_csv",
+        File.expand_path("spec/fixtures/primers.csv")
+      )
+      click_on "Find primers!"
+
+      expect(page).to have_content("That target doesn't seem to be in the container you provided.")
+    end
+  end
 end

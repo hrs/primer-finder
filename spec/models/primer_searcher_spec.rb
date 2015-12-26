@@ -26,14 +26,15 @@ describe PrimerSearcher do
         to eq(Position.new(start_pos: 2, end_pos: 8))
     end
 
-    it "returns nil if the target can't be found" do
+    it "raises an error if the target can't be found" do
       primer_searcher = PrimerSearcher.new(
         primers: [],
         target: "aaaccc",
         target_container: "ggatttccct"
       )
 
-      expect(primer_searcher.target_position).to be_nil
+      expect { primer_searcher.target_position }.
+        to raise_error PrimerSearchError
     end
   end
 

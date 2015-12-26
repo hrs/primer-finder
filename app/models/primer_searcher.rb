@@ -1,5 +1,7 @@
 require_relative "position"
 
+PrimerSearchError = Class.new(StandardError)
+
 class PrimerSearcher
   attr_reader :primers, :target, :target_container
 
@@ -17,6 +19,11 @@ class PrimerSearcher
       Position.new(
         start_pos: start_pos,
         end_pos: start_pos + target.size
+      )
+    else
+      raise(
+        PrimerSearchError,
+        "That target doesn't seem to be in the container you provided."
       )
     end
   end
