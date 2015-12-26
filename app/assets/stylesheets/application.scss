@@ -12,7 +12,6 @@ $container-background: #eee;
 $footer-color: #bbb;
 $footer-height: 50px;
 $radius: 5px;
-$target-region: #00f;
 $width: 700px;
 
 html {
@@ -61,8 +60,4 @@ footer {
 
 .binding-site {
   color: $binding-site;
-}
-
-.target {
-  color: $target-region;
 }

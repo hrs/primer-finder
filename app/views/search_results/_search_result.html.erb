@@ -5,15 +5,15 @@
 
   <code>
     <% if search_result.primer_end == :head %>
-      <span class="target"><%= target[0...-search_result.binding_length] %></span><span class="binding-site"><%= target[-search_result.binding_length..-1] %></span><br>
-      <%= ("&nbsp;" * (target.size - search_result.binding_length)).html_safe %><span class="binding-site"><%= search_result.primer.sequence[0...search_result.binding_length] %></span><%= search_result.primer.sequence[search_result.binding_length..-1] %>
+      target 5' <%= target[0...-search_result.binding_length] %><span class="binding-site"><%= target[-search_result.binding_length..-1] %></span> 3'<br>
+      primer 5' <%= ("&nbsp;" * (target.size - search_result.binding_length)).html_safe %><span class="binding-site"><%= search_result.primer.sequence[0...search_result.binding_length] %></span><%= search_result.primer.sequence[search_result.binding_length..-1] %> 3'
     <% elsif search_result.primer_end == :tail %>
-      <%= ("&nbsp;" * (search_result.primer.sequence.size - search_result.binding_length)).html_safe %><span class="binding-site"><%= @target[0...search_result.binding_length] %></span><span class="target"><%= target[search_result.binding_length..-1] %></span><br>
-      <%= search_result.primer.sequence[0...-search_result.binding_length] %><span class="binding-site"><%= search_result.primer.sequence[-search_result.binding_length..-1] %></span>
+      target 5' <%= ("&nbsp;" * (search_result.primer.sequence.size - search_result.binding_length)).html_safe %><span class="binding-site"><%= @target[0...search_result.binding_length] %></span><%= target[search_result.binding_length..-1] %> 3'<br>
+      primer 5' <%= search_result.primer.sequence[0...-search_result.binding_length] %><span class="binding-site"><%= search_result.primer.sequence[-search_result.binding_length..-1] %></span> 3'
     <% else %>
       <% offset = target.index(search_result.primer.sequence) %>
-      <span class="target"><%= target[0...offset] %></span><span class="binding-site"><%= target[offset...offset + search_result.primer.sequence.size] %></span><span class="target"><%= @target[offset + search_result.primer.sequence.size..-1] %></span><br>
-      <%= ("&nbsp;" * offset).html_safe %><span class="binding-site"><%= search_result.primer.sequence %></span>
+      target 5' <%= target[0...offset] %><span class="binding-site"><%= target[offset...offset + search_result.primer.sequence.size] %></span><span class="target"><%= @target[offset + search_result.primer.sequence.size..-1] %></span> 3'<br>
+      primer 5' <%= ("&nbsp;" * offset).html_safe %><span class="binding-site"><%= search_result.primer.sequence %></span> 3'
     <% end %>
   </code>
 </div>
