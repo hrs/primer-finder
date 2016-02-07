@@ -38,7 +38,7 @@ class Primer
   def reverse_complement
     Primer.new(
       name: name + "--reverse complement",
-      sequence: sequence_reverse_complement,
+      sequence: sequence.reverse.tr("actg", "tgac"),
       note: note,
     )
   end
@@ -64,20 +64,5 @@ class Primer
 
   def size
     @_size ||= sequence.size
-  end
-
-  REVERSE_COMPLEMENT_BASES = {
-    "a" => "t",
-    "c" => "g",
-    "t" => "a",
-    "g" => "c",
-  }
-
-  def sequence_reverse_complement
-    sequence.
-      reverse.
-      each_char.
-      map { |char| REVERSE_COMPLEMENT_BASES[char] }.
-      join
   end
 end
