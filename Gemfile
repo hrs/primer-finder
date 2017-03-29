@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby "2.2.4"
+ruby "2.4.0"
 
 gem "autoprefixer-rails"
 gem "bourbon", "~> 4.2.0"
@@ -36,7 +36,7 @@ group :development, :test do
   gem "factory_girl_rails"
   gem "i18n-tasks"
   gem "pry-rails"
-  gem "rspec-rails", "~> 3.3.0"
+  gem "rspec-rails"
 end
 
 group :test do
