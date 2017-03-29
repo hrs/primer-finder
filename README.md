@@ -1,4 +1,4 @@
-## PrimerFinder [![Build Status](https://secure.travis-ci.org/hrs/primer-finder.png?branch=master&.png)](http://travis-ci.org/hrs/primer-finder)
+## PrimerFinder [![Build Status](https://secure.travis-ci.org/hrs/primer-finder.png?branch=master&.png)](http://travis-ci.org/hrs/primer-finder) [![Code Climate](https://codeclimate.com/github/hrs/primer-finder/badges/gpa.svg)](https://codeclimate.com/github/hrs/primer-finder)
 
 A simple web app for searching lists of primers to find the ones that bind the
 best to a target region.
