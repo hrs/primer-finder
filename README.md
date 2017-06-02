@@ -3,7 +3,7 @@
 A simple web app for searching lists of primers to find the ones that bind the
 best to a target region.
 
-An instance is freely available for use at http://primer-finder.herokuapp.com.
+An instance is freely available for use at https://primer-finder.herokuapp.com.
 
 ### Setting up a development environment
 
