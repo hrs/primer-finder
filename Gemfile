@@ -41,6 +41,7 @@ end
 
 group :test do
   gem "capybara-webkit"
+  gem "coveralls", require: false
   gem "formulaic"
   gem "launchy"
   gem "shoulda-matchers"

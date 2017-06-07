@@ -1,3 +1,6 @@
+require "coveralls"
+Coveralls.wear!
+
 if ENV.fetch("COVERAGE", false)
   require "simplecov"
   SimpleCov.start "rails"
