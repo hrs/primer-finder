@@ -6,6 +6,11 @@ Rails.application.configure do
   config.serve_static_files = ENV['RAILS_SERVE_STATIC_FILES'].present?
   config.middleware.use Rack::Deflater
   config.middleware.use Rack::CanonicalHost, ENV.fetch("APPLICATION_HOST")
+  config.middleware.insert_before(
+    Rack::Runtime,
+    Rack::Timeout,
+    service_timeout: (ENV["RACK_TIMEOUT"] || 10).to_i,
+  )
   config.assets.js_compressor = :uglifier
   config.assets.compile = false
   config.assets.digest = true
@@ -17,4 +22,3 @@ Rails.application.configure do
   config.log_formatter = ::Logger::Formatter.new
   config.action_mailer.default_url_options = { host: ENV.fetch("APPLICATION_HOST") }
 end
-Rack::Timeout.timeout = (ENV["RACK_TIMEOUT"] || 10).to_i
