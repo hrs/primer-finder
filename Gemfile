@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby "2.4.0"
+ruby "2.5.1"
 
 gem "autoprefixer-rails"
 gem "bourbon", "~> 4.2.0"
@@ -33,7 +33,7 @@ group :development, :test do
   gem "bundler-audit", require: false
   gem "byebug"
   gem "dotenv-rails"
-  gem "factory_girl_rails"
+  gem "factory_bot_rails"
   gem "i18n-tasks"
   gem "pry-rails"
   gem "rspec-rails"
